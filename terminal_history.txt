@@ -1,0 +1,5 @@
+git status
+git add readme.md
+git add app.py
+git add data
+git add qualifier
