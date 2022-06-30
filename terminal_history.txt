@@ -8,4 +8,5 @@ git commit -m"copy the starter code to github"
 git push
 
 
-
+git add app.py README.md
+git add terminal_history.txt

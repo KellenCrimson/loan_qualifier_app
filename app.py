@@ -6,6 +6,7 @@ This is a command line application to match applicants with qualifying loans.
 Example:
     $ python app.py
 """
+import csv
 import sys
 import fire
 import questionary
@@ -23,6 +24,21 @@ from qualifier.filters.credit_score import filter_credit_score
 from qualifier.filters.debt_to_income import filter_debt_to_income
 from qualifier.filters.loan_to_value import filter_loan_to_value
 
+#this is a function that ask the user to give a csv_file
+#and save the csv file in a nested list.
+#the return value is a list
+def save_csv():
+    csvpath = questionary.text("Enter a file path to a rate-sheet").ask()
+    csvpath = Path(csvpath)
+    if not csvpath.exists():
+        sys.exit(f"Oops! Can't find this path: {csvpath}")
+
+    with open(csvpath, 'r') as csvfile:
+        my_list = list()
+        csvreader = csv.reader(csvfile, delimiter=",")
+        for row in csvreader:
+            my_list.append(row)
+    return my_list
 
 def load_bank_data():
     """Ask for the file path to the latest banking data and load the CSV file.
@@ -131,4 +147,4 @@ def run():
 
 
 if __name__ == "__main__":
-    fire.Fire(run)
+    fire.Fire(save_csv)
