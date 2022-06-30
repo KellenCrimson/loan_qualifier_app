@@ -12,4 +12,11 @@ git add app.py README.md
 git add terminal_history.txt
 git commit -m"add save_csv function to app.py, README.md renewd"
 git push
+git add README.md app.py terminal_history.txt
+git commit -m "fix wrong codes"
+git push
+
+git status
+
+
 
