@@ -39,7 +39,7 @@ there is also a picture to show how to work with this app
 >income = 20000
 >loan_amount = 100000
 >home_value = 210000
-![this is the picture instruction.]()
+![this is the picture instruction.](https://raw.githubusercontent.com/KellenCrimson/loan_qualifier_app/main/Pic/pic_guide.jpg)
 ---
 
 ## Content Added History(ver1)
