@@ -34,19 +34,22 @@ python app.py
 
 ---
 
-## Content Added Record(ver1)
-Add function save_csv, which read the csv file then return a list store the values, this version do not skip the headline of the csv
-code running successfully
+## Content Added History(ver1)
+Add function save_csv, which read a nested list then write the contents in a csv file, provide the user a spreadsheet
+code running successfully with fire library
 ```python
 if __name__ == "__main__":
     fire.Fire(save_csv)
+```
+```python
+python app.py [nested_list]
 ```
 ---
 
 ## Contributors
 
-Brought to you by ET Home Loans.
-Vivian Liu
+Brought to you by ET Home Loans.   
+Vivian Liu   
 Liu Lujunjin
 
 ---

@@ -24,21 +24,21 @@ from qualifier.filters.credit_score import filter_credit_score
 from qualifier.filters.debt_to_income import filter_debt_to_income
 from qualifier.filters.loan_to_value import filter_loan_to_value
 
-#this is a function that ask the user to give a csv_file
-#and save the csv file in a nested list.
-#the return value is a list
-def save_csv():
+#this is a function that receive a nested list
+#and save the data in a csv file 
+#the purpose is to provide the user a spreadsheet
+def save_csv(qulification_list):
+    print("Providing a spreadsheet requires file path\n"
+        + "please enter a path (./your_file_name.csv)")
+    
     csvpath = questionary.text("Enter a file path to a rate-sheet").ask()
-    csvpath = Path(csvpath)
-    if not csvpath.exists():
-        sys.exit(f"Oops! Can't find this path: {csvpath}")
-
-    with open(csvpath, 'r') as csvfile:
-        my_list = list()
-        csvreader = csv.reader(csvfile, delimiter=",")
-        for row in csvreader:
-            my_list.append(row)
-    return my_list
+    header = ["lender", "Max Loan Amount", "Max DTI", "Min Credit Score", "Interest Rate"]
+    
+    with open(csvpath, 'w') as my_file:
+        csvwriter = csv.writer(my_file)
+        csvwriter.writerow(header)
+        for line in qulification_list:
+            csvwriter.writerow(line)
 
 def load_bank_data():
     """Ask for the file path to the latest banking data and load the CSV file.
