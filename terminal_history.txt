@@ -25,4 +25,5 @@ git add README.md app.py qualifier/utils/fileio.py Pic
 git commit -m"add picture for user instruction"
 git push
 
-
+git commit -m"lastest modification to README"
+git push

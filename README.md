@@ -73,7 +73,7 @@ Liu Lujunjin
 
 ## License
 
-MIT License
+* MIT License
 
 Copyright (c) [2022] [Liu Lujunjin]
 
